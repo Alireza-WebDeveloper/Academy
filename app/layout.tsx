@@ -3,7 +3,8 @@ import type { Metadata } from 'next';
 import { Roboto_Slab } from 'next/font/google';
 import ThemeWrapper from './lib/provider/theme';
 import localFont from 'next/font/local';
-
+import Header from './components/shared/header';
+import 'simplebar-react/dist/simplebar.min.css';
 // const robotoSlab = Roboto_Slab({
 //   subsets: ['latin'],
 //   weight: ['400'],
@@ -23,9 +24,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fa" dir="rtl">
-      <body className={`${iranSans.className} container mx-auto `}>
+      <body className={`${iranSans.className}`}>
         <ThemeWrapper>
-          <main className="mt-[4.52rem]">{children}</main>
+          <Header />
+          <main className="mt-[4.52rem] container mx-auto ">{children}</main>
         </ThemeWrapper>
       </body>
     </html>

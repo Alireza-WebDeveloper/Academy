@@ -4,4 +4,38 @@
 
 html {
   direction: rtl;
+  text-transform: capitalize;
+}
+
+.gradient-box {
+  background: linear-gradient(135deg, #f299a3 65%, #a0c4ff 35%);
+}
+
+/* استایل‌دهی به اسکرول‌بار مرورگر */
+html {
+  scrollbar-width: thin; /* برای مرورگرهای فایرفاکس */
+  scrollbar-color: #375ce7 #f1f1f1; /* رنگ انگشتک و پس‌زمینه */
+}
+
+html::-webkit-scrollbar {
+  width: 12px; /* عرض اسکرول‌بار */
+}
+
+html::-webkit-scrollbar-track {
+  background: #f1f1f1; /* پس‌زمینه اسکرول‌بار */
+  border-radius: 10px; /* گرد کردن گوشه‌ها */
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #375ce7; /* رنگ انگشتک */
+  border-radius: 10px; /* گرد کردن گوشه‌های انگشتک */
+  border: 3px solid #f1f1f1; /* حاشیه دور انگشتک */
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background-color: #2f4cad; /* تغییر رنگ در حالت هاور */
+}
+
+html::-webkit-scrollbar-thumb:active {
+  background-color: #243a80; /* تغییر رنگ در حالت کلیک */
 }

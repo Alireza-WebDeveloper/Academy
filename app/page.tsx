@@ -1,5 +1,5 @@
 const Page = () => {
-  return <div className="flex flex-col"></div>;
+  return <div className="grid grid-cols-4 gap-2">1</div>;
 };
 
 export default Page;

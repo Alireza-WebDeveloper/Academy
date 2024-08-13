@@ -24,7 +24,7 @@ const Search: React.FC<Props> = ({
         onChange={(e) => setQuery(e.target.value)}
         value={query}
         type="text"
-        className={`rounded-xl px-6 py-4 w-[680px] bg-[#FFFF] border ${className}`}
+        className={`rounded-xl px-6 py-4 w-[680px] bg-[#FFFF] text-black border ${className}`}
         placeholder={placeholder}
         {...rest}
       />
