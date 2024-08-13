@@ -26,11 +26,9 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl">
       <body className={`${iranSans.className}`}>
-        <ThemeWrapper>
-          <Header />
-          <main className="mt-[4.52rem] container mx-auto p-2">{children}</main>
-          <Footer/>
-        </ThemeWrapper>
+        <Header />
+        <main className="mt-[4.52rem] container mx-auto p-2">{children}</main>
+        <Footer />
       </body>
     </html>
   );

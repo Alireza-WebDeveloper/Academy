@@ -5,7 +5,7 @@ import Introduction from './components/_pages/home/introduction';
 import Latest from './components/_pages/home/latest';
 import Populars from './components/_pages/home/populars';
 
-const Page = () => {
+const Page = async () => {
   return (
     <div className="grid grid-cols-1 lg:gap-24 gap-12 place-content-center">
       <Introduction />
