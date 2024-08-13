@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className={`${iranSans.className}`}>
         <ThemeWrapper>
           <Header />
-          <main className="mt-[4.52rem] container mx-auto ">{children}</main>
+          <main className="mt-[4.52rem] container mx-auto p-2">{children}</main>
         </ThemeWrapper>
       </body>
     </html>
