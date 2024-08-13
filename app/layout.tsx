@@ -5,6 +5,7 @@ import ThemeWrapper from './lib/provider/theme';
 import localFont from 'next/font/local';
 import Header from './components/shared/header';
 import 'simplebar-react/dist/simplebar.min.css';
+import Footer from './components/shared/footer';
 // const robotoSlab = Roboto_Slab({
 //   subsets: ['latin'],
 //   weight: ['400'],
@@ -28,6 +29,7 @@ export default function RootLayout({
         <ThemeWrapper>
           <Header />
           <main className="mt-[4.52rem] container mx-auto p-2">{children}</main>
+          <Footer/>
         </ThemeWrapper>
       </body>
     </html>
