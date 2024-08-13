@@ -369,7 +369,7 @@ export const MailIcon = () => {
   );
 };
 
-export const ArrowDownIcon  = () => {
+export const ArrowDownIcon = () => {
   return (
     <svg
       width="11"
@@ -400,6 +400,23 @@ export const CloseIcon = () => {
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const PolygonIcon = () => {
+  return (
+    <svg
+      width="83"
+      height="82"
+      viewBox="0 0 83 82"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M35.8809 81.166C30.6329 82.2508 25.2048 80.4533 21.6413 76.4508L3.87505 56.4951C0.311612 52.4925 -0.845802 46.8929 0.838805 41.8056L9.23775 16.4418C10.9224 11.3544 15.1931 7.55228 20.4411 6.46754L46.6063 1.0593C51.8544 -0.0254398 57.2825 1.77201 60.8459 5.77458L78.6122 25.7302C82.1757 29.7328 83.3331 35.3324 81.6485 40.4197L73.2495 65.7836C71.5649 70.8709 67.2942 74.6731 62.0462 75.7578L35.8809 81.166Z"
+        fill="#1A2C5D"
       />
     </svg>
   );

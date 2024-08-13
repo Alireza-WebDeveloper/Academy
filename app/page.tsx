@@ -1,4 +1,5 @@
 import Categories from './components/_pages/home/categories';
+import Contact from './components/_pages/home/contact';
 import Introduction from './components/_pages/home/introduction';
 import Latest from './components/_pages/home/latest';
 import Populars from './components/_pages/home/populars';
@@ -10,6 +11,7 @@ const Page = () => {
       <Categories />
       <Populars />
       <Latest />
+      <Contact />
     </div>
   );
 };
