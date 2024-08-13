@@ -1,5 +1,5 @@
 const Page = () => {
-  return <>سلام خوبی</>;
+  return <div className="flex flex-col"></div>;
 };
 
 export default Page;
