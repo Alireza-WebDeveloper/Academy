@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './header';
+import TitleSection from '../title-section';
 import Sections from './sections';
 
 interface Props {}
@@ -7,7 +7,7 @@ interface Props {}
 const Populars: React.FC<Props> = () => {
   return (
     <div className="flex flex-col gap-5">
-      <Header />
+      <TitleSection title="محبوب ترین مطالب" />
       <Sections />
     </div>
   );
