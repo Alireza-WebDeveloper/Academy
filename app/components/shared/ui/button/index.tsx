@@ -4,11 +4,13 @@ import { cn } from '@/app/lib/utils/cn';
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: 'sm' | 'md' | 'lg';
   color?: 'blue' | 'red' | 'green';
+  variant?: 'solid' | 'outline';
 }
 
 const Button: React.FC<ButtonProps> = ({
   size = 'md',
   color = 'blue',
+  variant = 'solid',
   className,
   children,
   ...props
@@ -20,9 +22,18 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   const colorClasses = {
-    blue: 'bg-blue-500 hover:bg-blue-600 text-white',
-    red: 'bg-red-500 hover:bg-red-600 text-white',
-    green: 'bg-green-500 hover:bg-green-600 text-white',
+    blue:
+      variant === 'solid'
+        ? 'bg-blue-500 hover:bg-blue-600 text-white'
+        : 'border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white',
+    red:
+      variant === 'solid'
+        ? 'bg-red-500 hover:bg-red-600 text-white'
+        : 'border-2 border-red-500 text-red-500 hover:bg-red-500 hover:text-white',
+    green:
+      variant === 'solid'
+        ? 'bg-green-500 hover:bg-green-600 text-white'
+        : 'border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white',
   };
 
   return (
