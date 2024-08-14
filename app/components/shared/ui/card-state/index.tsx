@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import {
   BadgeHeartFillIcon,
@@ -7,16 +8,23 @@ import {
 } from '../icons';
 import LinkContainer from '../link-container';
 import { Post } from '@/app/lib/actions/home/_types/shared';
+import { updateLikePost } from '@/app/lib/actions/home';
 
 interface Props {
   data: Post;
 }
 
 const CardState: React.FC<Props> = ({ data }) => {
+  const handleLike = async () => {
+    await updateLikePost({ id: String(data.id) });
+  };
   return (
     <div className="flex flex-col gap-3  p-4 rounded-xl border">
       <section className="p-2 h-[170px] bg-[#384D60] rounded w-full flex justify-center items-center flex-col gap-2 relative">
-        <span className="absolute top-3 right-3">
+        <span
+          className="absolute top-3 right-3 cursor-pointer"
+          onClick={handleLike}
+        >
           {data.liked ? <BadgeHeartFillIcon /> : <BadgeHeartVacantIcon />}
         </span>
         <p className="text-white text-2xl font-bold">Lorem ipsum</p>

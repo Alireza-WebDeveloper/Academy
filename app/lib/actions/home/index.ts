@@ -15,6 +15,9 @@ import { axiosRequest } from '../../utils/request';
 // !! Share Types
 import { Post, Response } from './_types/shared';
 
+// Server Actions
+import { revalidatePath, revalidateTag } from 'next/cache';
+
 // !! Get
 export const getCategories = async () => {
   const response = await axiosRequest.get<GetCategoryResponse>('/categories');
@@ -50,6 +53,7 @@ export const getBySearchQuery = async ({ query }: GetBySearchQueryParams) => {
 // Post , Patch
 export const updateLikePost = async ({ id }: UpdateLikePostParams) => {
   const response = await axiosRequest.put<Post>(`/post/${id}/like`);
+  revalidatePath('/');
   return response.data;
 };
 
