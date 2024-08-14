@@ -1,4 +1,4 @@
-export interface Category {
+export interface CategoryState {
   id: number;
   title: string;
   description: string;
@@ -8,5 +8,5 @@ export interface Category {
 export interface GetCategoryResponse {
   status: 'ok' | 'error';
   message: string;
-  data: Category[];
+  data: CategoryState[];
 }
