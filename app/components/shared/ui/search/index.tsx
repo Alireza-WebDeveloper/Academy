@@ -6,6 +6,7 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;
   query: string;
   setQuery(value: string): void;
+  handleSearch(): void;
 }
 
 const Search: React.FC<Props> = ({
@@ -13,11 +14,15 @@ const Search: React.FC<Props> = ({
   className,
   query,
   setQuery,
+  handleSearch,
   ...rest
 }) => {
   return (
     <section className="relative flex w-fit">
-      <span className="absolute top-1/2 left-4 transform -translate-y-1/2">
+      <span
+        className="absolute top-1/2 left-4 transform -translate-y-1/2 cursor-pointer"
+        onClick={handleSearch}
+      >
         <SearchIcon />
       </span>
       <input

@@ -1,3 +1,4 @@
+'use client';
 import LinkContainer from './components/shared/ui/link-container';
 
 const NotFound = () => {

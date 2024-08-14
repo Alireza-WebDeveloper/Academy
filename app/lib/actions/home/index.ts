@@ -43,10 +43,8 @@ export const getLatest = async () => {
 };
 
 export const getBySearchQuery = async ({ query }: GetBySearchQueryParams) => {
-  const queryStringified = createParams({ query });
-  const response = await axiosRequest.get<Response>(
-    `/search?${queryStringified}`
-  );
+  // const queryStringified = createParams({ q: query });
+  const response = await axiosRequest.get<Response>(`/search?q=${query}`);
   return response.data;
 };
 

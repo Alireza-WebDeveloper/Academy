@@ -4,7 +4,12 @@ import Gallery from './components/_pages/home/gallery';
 import Introduction from './components/_pages/home/introduction';
 import Latest from './components/_pages/home/latest';
 import Populars from './components/_pages/home/populars';
-import { getCategories, getLatest, getPopulars } from './lib/actions/home';
+import {
+  getBySearchQuery,
+  getCategories,
+  getLatest,
+  getPopulars,
+} from './lib/actions/home';
 
 interface Props {
   params: { section: string };
@@ -18,12 +23,15 @@ const Page = async ({ searchParams }: Props) => {
     const { data: categories } = await getCategories();
 
     const sectionId: any = searchParams?.section || '';
+    const query: any = searchParams?.section || '';
 
     const { data: populars } = await getPopulars({
       sectionId,
     });
 
     const { data: latest } = await getLatest();
+
+    const { data: getBySearch } = await getBySearchQuery({ query });
 
     return (
       <div className="grid grid-cols-1 lg:gap-24 gap-12 place-content-center">
