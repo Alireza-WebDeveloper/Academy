@@ -1,21 +1,33 @@
+import { GetServerSideProps } from 'next';
 import Categories from './components/_pages/home/categories';
 import Contact from './components/_pages/home/contact';
 import Gallery from './components/_pages/home/gallery';
 import Introduction from './components/_pages/home/introduction';
 import Latest from './components/_pages/home/latest';
 import Populars from './components/_pages/home/populars';
-import { getCategories } from './lib/actions/home';
+import { getCategories, getPopulars } from './lib/actions/home';
+
+interface Props {
+  params: { section: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+}
 
 export const dynamic = 'force-dynamic';
 
-const Page = async () => {
+const Page = async ({ searchParams }: Props) => {
   const { data: categories } = await getCategories();
- 
+
+  const sectionId: any = searchParams?.section || '';
+
+  const { data: populars } = await getPopulars({
+    sectionId,
+  });
+
   return (
     <div className="grid grid-cols-1 lg:gap-24 gap-12 place-content-center">
       <Introduction />
-      <Categories categories={categories}/>
-      <Populars />
+      <Categories categories={categories} />
+      <Populars populars={populars}/>
       <Latest />
       <Contact />
       <Gallery />
