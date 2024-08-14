@@ -15,26 +15,30 @@ interface Props {
 export const dynamic = 'force-dynamic';
 
 const Page = async ({ searchParams }: Props) => {
-  const { data: categories } = await getCategories();
+  try {
+    const { data: categories } = await getCategories();
 
-  const sectionId: any = searchParams?.section || '';
+    const sectionId: any = searchParams?.section || '';
 
-  const { data: populars } = await getPopulars({
-    sectionId,
-  });
+    const { data: populars } = await getPopulars({
+      sectionId,
+    });
 
-  const { data: latest } = await getLatest();
+    const { data: latest } = await getLatest();
 
-  return (
-    <div className="grid grid-cols-1 lg:gap-24 gap-12 place-content-center">
-      <Introduction />
-      <Categories categories={categories} />
-      <Populars populars={populars} />
-      <Latest latest={latest}/>
-      <Contact />
-      <Gallery />
-    </div>
-  );
+    return (
+      <div className="grid grid-cols-1 lg:gap-24 gap-12 place-content-center">
+        <Introduction />
+        <Categories categories={categories} />
+        <Populars populars={populars} />
+        <Latest latest={latest} />
+        <Contact />
+        <Gallery />
+      </div>
+    );
+  } catch (err: any) {
+    throw new Error(err);
+  }
 };
 
 export default Page;
