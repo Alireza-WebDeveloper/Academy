@@ -5,7 +5,7 @@ import Gallery from './components/_pages/home/gallery';
 import Introduction from './components/_pages/home/introduction';
 import Latest from './components/_pages/home/latest';
 import Populars from './components/_pages/home/populars';
-import { getCategories, getPopulars } from './lib/actions/home';
+import { getCategories, getLatest, getPopulars } from './lib/actions/home';
 
 interface Props {
   params: { section: string };
@@ -23,12 +23,14 @@ const Page = async ({ searchParams }: Props) => {
     sectionId,
   });
 
+  const { data: latest } = await getLatest();
+
   return (
     <div className="grid grid-cols-1 lg:gap-24 gap-12 place-content-center">
       <Introduction />
       <Categories categories={categories} />
-      <Populars populars={populars}/>
-      <Latest />
+      <Populars populars={populars} />
+      <Latest latest={latest}/>
       <Contact />
       <Gallery />
     </div>
