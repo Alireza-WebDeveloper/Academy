@@ -1,8 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    domains: ['https://webwizard-api.vercel.app'],
-  },
+  images: {},
   async headers() {
     return [
       {
