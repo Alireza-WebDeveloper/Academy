@@ -1,4 +1,3 @@
-import { GetServerSideProps } from 'next';
 import Categories from './components/_pages/home/categories';
 import Contact from './components/_pages/home/contact';
 import Gallery from './components/_pages/home/gallery';
