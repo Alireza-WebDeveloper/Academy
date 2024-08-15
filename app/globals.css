@@ -5,6 +5,7 @@
 html {
   direction: rtl;
   text-transform: capitalize;
+  text-decoration: none;
 }
 
 .gradient-box {
