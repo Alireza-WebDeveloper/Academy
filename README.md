@@ -2,8 +2,7 @@
 
 **[Demo لینک سایت](https://academy-one-mu.vercel.app/)**
 
-
-#Install : 
+**Install** : 
  npm install 
  npm run dev
 
